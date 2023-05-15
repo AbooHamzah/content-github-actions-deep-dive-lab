@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      BUCKET_NAME: cfst-3457-56dd873aac88d273337e7f6fc-nonprodbucket-1aws3o21p8368
+      BUCKET_NAME: cfst-3457-fbf4d3f1086cf6986242366a2-nonprodbucket-1izc91laeias1
     steps:
       - name: Check out code
         uses: actions/checkout@v2
@@ -29,4 +29,4 @@ jobs:
           npm ci
           npm run build
       - name: deploy files to bucket
-        run: aws s3 cp public s3://${{ env.BUCKET_NAME }} --recursive --acl public-read
+        run: aws s3 cp public s3://${{ env.BUCKET_NAME }} --recursive
